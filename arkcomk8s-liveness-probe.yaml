@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: arkcomk8s-liveness
+spec:
+  containers:
+  - image: noshmak/arkcomk8s-unhealthy
+    name: arkcomk8s
+    livenessProbe:
+      httpGet:
+        path: / 
+        port: 8080
